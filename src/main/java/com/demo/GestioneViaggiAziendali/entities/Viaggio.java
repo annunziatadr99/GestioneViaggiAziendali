@@ -31,4 +31,36 @@ public class Viaggio {
     @NotNull(message = "Stato è obbligatoria")
     @Column(nullable = false)
     private Stato stato;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDestinazione() {
+        return destinazione;
+    }
+
+    public void setDestinazione(String destinazione) {
+        this.destinazione = destinazione;
+    }
+
+    public LocalDate getDataPartenza() {
+        return dataPartenza;
+    }
+
+    public void setDataPartenza(LocalDate dataPartenza) {
+        this.dataPartenza = dataPartenza;
+    }
+
+    public Stato getStato() {
+        return stato;
+    }
+
+    public void setStato(Stato stato) {
+        this.stato = stato;
+    }
 }
