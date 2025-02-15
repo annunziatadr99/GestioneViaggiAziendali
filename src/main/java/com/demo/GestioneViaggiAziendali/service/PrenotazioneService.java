@@ -29,6 +29,10 @@ public class PrenotazioneService {
         return prenotazioneRepository.findById(id);
     }
 
+    public Prenotazione createPrenotazione(Prenotazione prenotazione) {
+        return prenotazioneRepository.save(prenotazione);
+    }
+
     public Optional<Prenotazione> updatePrenotazione(Long id, Prenotazione dettagliPrenotazione) {
         return prenotazioneRepository.findById(id)
                 .map(prenotazione -> {
@@ -40,7 +44,6 @@ public class PrenotazioneService {
                 });
     }
 
-
     public void deletePrenotazione(Long id) {
         prenotazioneRepository.deleteById(id);
     }
@@ -49,3 +52,4 @@ public class PrenotazioneService {
         return prenotazioneRepository.findByDipendenteAndData(dipendenteId, dataRichiesta);
     }
 }
+
