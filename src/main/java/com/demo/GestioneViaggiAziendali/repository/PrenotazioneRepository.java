@@ -10,12 +10,13 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface PrenotazioneRepository extends JpaRepository<Prenotazione,Long> {
+public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
 
-    @Query("SELECT b FROM Booking b WHERE b.employee.id = :employeeId AND b.requestDate = :requestDate")
+    @Query("SELECT p FROM Prenotazione p WHERE p.dipendente.id = :dipendenteId AND p.dataRichiesta = :dataRichiesta")
     List<Prenotazione> findByDipendenteAndData(@Param("dipendenteId") Long dipendenteId, @Param("dataRichiesta") LocalDate dataRichiesta);
 
-   @Override
-   Page<Prenotazione> findAll(Pageable pageable);
+    @Override
+    Page<Prenotazione> findAll(Pageable pageable);
 }
+
 
