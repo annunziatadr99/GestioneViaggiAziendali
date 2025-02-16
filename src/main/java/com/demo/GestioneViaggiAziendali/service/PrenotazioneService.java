@@ -49,7 +49,7 @@ public class PrenotazioneService {
     }
 
     public List<Prenotazione> findByDipendenteAndData(Long dipendenteId, LocalDate dataRichiesta) {
-        return prenotazioneRepository.findByDipendenteAndData(dipendenteId, dataRichiesta);
+        return prenotazioneRepository.findByDipendenteAndData(dipendenteId, dataRichiesta); //
     }
 }
 
